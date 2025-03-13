@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Dashboard</title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+  </head>
+
+  <body>
+    <div class="menu">
+      <ul>
+        <li class="profile">
+          <div class="image">
+            <img src="image/user.webp" alt="profile" />
+          </div>
+          <p>Mohammed</p>
+          <!-- <i class="fa-solid fa-xmark"></i> -->
+        </li>
+
+        <li>
+          <a href="index.html" class="active">
+            <i class="fa fa-home"></i>
+            <p>Dashboard</p>
+          </a>
+        </li>
+        <li>
+          <a href="show.html">
+            <i class="fa-regular fa-eye"></i>
+            <p>Show Products</p>
+          </a>
+        </li>
+
+        <li>
+          <a href="Add.html">
+            <i class="fa fa-pen"></i>
+            <p>Add products</p>
+          </a>
+        </li>
+        <li class="logOut">
+          <a href="login.html">
+            <i class="fa fa-sign-out"></i>
+            <p>Log Out</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="content">
+      <div class="title-content">
+        <div class="bar">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <p><a href="index.html"> Dashboard </a></p>
+      </div>
+      <div class="data">
+        <div class="box">
+          <div class="content">
+            <i class="fas fa-dollar"></i>
+            <span>Total price</span>
+            <p id="total-price"></p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="content">
+            <i class="fa-solid fa-database"></i>
+            <span>total Amount </span>
+            <p id="total-products"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="title-content">
+        <p>Products</p>
+        <i class="fa fa-table"></i>
+      </div>
+      <div class="product_button">
+        <div class="addProduct">
+          <a href="Add.html">
+            <i class="fa fa-plus"></i>
+            <p>Add</p>
+          </a>
+        </div>
+
+        <div class="showProduct">
+          <a href="show.html">
+            <i class="fa-regular fa-eye"></i>
+            <p>show</p>
+          </a>
+        </div>
+      </div>
+
+      <div class="table_content">
+        <table id="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Amount</th>
+              <th>Price</th>
+              <th>total price</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+    <script src="js/all.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="/sw.js"></script>
+
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("/sw.js")
+            .then(() => console.log("Service Worker Registered"))
+            .catch((err) => console.log("Service Worker Failed:", err));
+        });
+      }
+    </script>
+  </body>
+</html>

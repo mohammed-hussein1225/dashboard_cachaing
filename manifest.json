@@ -1,0 +1,22 @@
+{
+    "name": "Dashboard Web",
+    "short_name": "Dashboard",
+    "start_url": "/Dashboard/index.html",
+    "display": "standalone",
+    "background_color": "#f4f4f4",
+    "orientation": "landscape",
+    "scope": "/",
+    "icons": [
+      {
+        "src": "/image/icon.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "/image/icon.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ]
+  }
+  

@@ -1,20 +1,20 @@
 {
-    "name": "Dashboard Web",
+    "name": "Dashboard",
     "short_name": "Dashboard",
-    "start_url": "/dashboard_cachaing/index.html",
+    "start_url": "/index.html",
     "display": "standalone",
     "background_color": "#f4f4f4",
     "orientation": "landscape",
     "scope": "/",
     "icons": [
       {
-        "src": "/dashboard_cachaing/image/icon.png",
-        "type": "image/png",
+        "src": "/image/icon.png",
+        "type": "/image/png",
         "sizes": "192x192"
       },
       {
-        "src": "/dashboard_cachaing/image/icon.png",
-        "type": "image/png",
+        "src": "/image/icon.png",
+        "type": "/image/png",
         "sizes": "512x512"
       }
     ]

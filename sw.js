@@ -34,16 +34,19 @@ self.addEventListener("install", (event) => {
 
 self.addEventListener("fetch", (event) => {
   event.respondWith(
-    caches.match(event.request).then((response) => {
-      return (
-        response ||
-        fetch(event.request).then((network) => {
-          return caches.open(CACHE_NAME).then((cache) => {
-            cache.put(event.request, network.clone());
-            return network;
-          });
-        })
-      );
+    caches.open(CACHE_NAME).then((cache) => {
+      return cache.match(event.request).then((cachedResponse) => {
+        // إذا كان هناك استجابة مخزنة، يتم إرجاعها مباشرةً
+        const fetchPromise = fetch(event.request)
+          .then((networkResponse) => {
+            // تحديث الكاش بالملف الجديد
+            cache.put(event.request, networkResponse.clone());
+            return networkResponse;
+          })
+          .catch(() => cachedResponse); // في حالة عدم توفر الإنترنت، ارجع إلى الكاش
+
+        return cachedResponse || fetchPromise;
+      });
     })
   );
 });

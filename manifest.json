@@ -1,19 +1,19 @@
 {
     "name": "Dashboard Web",
     "short_name": "Dashboard",
-    "start_url": "/dashboard_caching/index.html",
+    "start_url": "/index.html",
     "display": "standalone",
     "background_color": "#f4f4f4",
     "orientation": "landscape",
     "scope": "/",
     "icons": [
       {
-        "src": "/dashboard_caching/image/icon.png",
+        "src": "/image/icon.png",
         "type": "image/png",
         "sizes": "192x192"
       },
       {
-        "src": "/dashboard_caching/image/icon.png",
+        "src": "/image/icon.png",
         "type": "image/png",
         "sizes": "512x512"
       }

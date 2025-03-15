@@ -114,27 +114,7 @@
       if ("serviceWorker" in navigator) {
         window.addEventListener("load", () => {
           navigator.serviceWorker
-            .register("/dashboard_cachaing/sw.js", { updateViaCache: "none" })
-            .then((registration) => {
-              console.log("Service Worker Registered");
-
-              if (registration.waiting) {
-                registration.waiting.postMessage({ type: "SKIP_WAITING" });
-              }
-
-              registration.addEventListener("updatefound", () => {
-                const newWorker = registration.installing;
-                newWorker.addEventListener("statechange", () => {
-                  if (
-                    newWorker.state === "installed" &&
-                    navigator.serviceWorker.controller
-                  ) {
-                    console.log("New Service Worker Available - Refreshing...");
-                    window.location.reload();
-                  }
-                });
-              });
-            })
+            .register("/dashboard_cachaing/sw.js")
             .catch((err) => console.log("Service Worker Failed:", err));
         });
       }

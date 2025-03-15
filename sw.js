@@ -1,5 +1,6 @@
 const CACHE_NAME = "dashboard-cache-v1";
 const FILES_TO_CACHE = [
+  "/dashboard_cachaing/sw.js",
   "/dashboard_cachaing/manifest.json",
   "/dashboard_cachaing/index.html",
   "/dashboard_cachaing/login.html",
